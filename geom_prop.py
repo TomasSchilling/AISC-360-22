@@ -4,7 +4,7 @@ class H:
     
     def __init__(self,D,bf,tf,tw,e_c=0):
         self.D=D
-        self.bf=bf
+        self.bf=(bf-e_c)
         self.tf=tf-e_c
         self.tw=tw-e_c 
         self.h=(self.D-tf*2)
@@ -99,6 +99,8 @@ class O:
         self.D=D
         self.t= t-e_c
         
+        self.A = np.pi*(D**2-(D-t)**2)/4
+        
         ##### Falta  
 
 class B:
@@ -132,13 +134,6 @@ mm=0.001
 
 
 Hn= H(200*mm,150*mm,8*mm,6*mm,1*mm)
-print(Hn.A/cm**2)
-print(Hn.rx/cm)
-print(Hn.ry/cm)
-print(Hn.Sx/cm**3,Hn.Sy/cm**3,sep="\n")
-print(Hn.Zx/cm**3,Hn.Zy/cm**3,sep="\n")
-print(Hn.J/cm**4,Hn.Cw/cm**6,sep="\n")
-print(Hn.Ix/cm**4,Hn.Iy/cm**4)
 
-print(Hn.rt/cm,Hn.rts/cm,Hn.Aw/cm**2)
+
 
